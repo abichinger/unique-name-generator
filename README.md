@@ -11,29 +11,42 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A dart package to generate unique usernames based on dictionaries.
+
+This library is a port of the node.js package [unique-names-generator
+](https://www.npmjs.com/package/unique-names-generator#api) by [Andrea SonnY](https://github.com/andreasonny83/unique-names-generator)
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- includes a [list of dictionaries](https://github.com/abichinger/unique-name-generator/tree/main/lib/src/dict)
+- supports custom dictionaries
 
-## Getting started
+## Installation
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```
+dart pub add unique_name_generator
+```
+or 
+```
+flutter pub add unique_name_generator
+```
+
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
 ```dart
-const like = 'sample';
+import 'package:unique_name_generator/unique_name_generator.dart';
+
+void main() {
+  var ung = UniqueNameGenerator(
+    dictionaries: [adjectives, animals],
+    style: NameStyle.capital,
+    separator: '_',
+  );
+
+  List<String> names = List.generate(10, (index) => ung.generate());
+  print(names);
+
+  //Output: [Painful_Wren, Primary_Chicken, Swift_Wolf, Guilty_Rhinoceros, Silent_Panther, Still_Unicorn, Frail_Aphid, Willowy_Skink, Continued_Clownfish, Magnificent_Tyrannosaurus]
+}
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.

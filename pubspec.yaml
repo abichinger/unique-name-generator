@@ -1,7 +1,7 @@
-name: unique_names_generator
-description: Random name generator based on dictonaries.
+name: unique_name_generator
+description: Random name generator based on dictionaries.
 version: 1.0.0
-homepage: https://github.com/abichinger/unique-names-generator
+homepage: https://github.com/abichinger/unique-name-generator
 
 environment:
   sdk: '>=2.17.6 <3.0.0'
